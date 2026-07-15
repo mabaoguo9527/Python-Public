@@ -43,7 +43,7 @@ class FakeDeepSeekHandler(BaseHTTPRequestHandler):
                                 "function": {
                                     "name": json_body["tools"][0]["function"]["name"],
                                     "arguments": json.dumps(
-                                        {'title1': '盗梦空间', 'year2': 2010, 'director': '克里斯托弗·诺兰',
+                                        {'title': '盗梦空间', 'year': 2010, 'director': '克里斯托弗·诺兰',
                                          'rating': 9.3},
                                         ensure_ascii=False
                                     )
@@ -79,8 +79,8 @@ class FakeDeepSeekHandler(BaseHTTPRequestHandler):
 
 
 def main():
-    server = HTTPServer(("127.0.0.1", 8889), FakeDeepSeekHandler)
-    print("Fake DeepSeek server running at http://127.0.0.1:8889")
+    server = HTTPServer(("127.0.0.1", 8890), FakeDeepSeekHandler)  # type: ignore[arg-type]
+    print("Fake DeepSeek server running at http://127.0.0.1:8890")
     server.serve_forever()
 
 
